@@ -1,0 +1,54 @@
+{
+  "name": "leasechain",
+  "version": "1.0.0",
+  "description": "Trustless NFT rental protocol with automatic expiry handling powered by Reactive Smart Contracts",
+  "main": "hardhat.config.js",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "test:coverage": "npx hardhat coverage",
+    "deploy:local": "npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:base": "npx hardhat run scripts/deploy.js --network baseSepolia",
+    "deploy:arbitrum": "npx hardhat run scripts/deploy.js --network arbitrumSepolia",
+    "deploy:avalanche": "npx hardhat run scripts/deploy.js --network avalancheFuji",
+    "deploy:sonic": "npx hardhat run scripts/deploy.js --network sonicTestnet",
+    "deploy:bnb": "npx hardhat run scripts/deploy.js --network bnbTestnet",
+    "deploy:reactive": "npx hardhat run scripts/deployReactive.js --network reactive",
+    "connect:reactive": "npx hardhat run scripts/setReactiveContract.js",
+    "frontend:install": "cd frontend && npm install --legacy-peer-deps",
+    "frontend:start": "cd frontend && npm start",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:test": "cd frontend && npm test",
+    "start": "npm run frontend:start",
+    "build": "npm run compile && npm run frontend:build",
+    "clean": "npx hardhat clean && rm -rf frontend/build"
+  },
+  "keywords": [
+    "NFT",
+    "rental",
+    "leasing",
+    "reactive",
+    "smart-contracts",
+    "blockchain",
+    "defi",
+    "trustless",
+    "automation",
+    "multi-chain"
+  ],
+  "author": "LeaseChain Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/leasechain.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/leasechain/issues"
+  },
+  "homepage": "https://github.com/yourusername/leasechain#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.0",
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.3.1"
+  }
+}
