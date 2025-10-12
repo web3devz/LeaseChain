@@ -11,8 +11,8 @@ export const CONTRACTS = {
       decimals: 18,
     },
     contracts: {
-      LeaseChain: "0xb30fC27A86Aaa9Ad8D7593b137AD4990e5e8E141",
-      TestNFT: "0x39E98a358dE86114465Cd39DE945e07B1443C94F",
+      LeaseChain: "0x371755C9D14b9dEa32c3b6D5e8e8639d4C202Fa2",
+      TestNFT: "0xa49a63864f94d42904596879Cbb9F271348489cC",
     }
   },
   // Arbitrum Sepolia Testnet
@@ -26,8 +26,8 @@ export const CONTRACTS = {
       decimals: 18,
     },
     contracts: {
-      LeaseChain: "0xAf7F094dc3db86995c84cd8fa7c893Eafb750286",
-      TestNFT: "0xD5667e049fc5c9c9bdd6b2e31416030133839d8f",
+      LeaseChain: "0xB5a54114Cd22924070e4850f9039eb6b3845bA2F",
+      TestNFT: "0xB78862269a41b78DdB59cB888b0e6C3BC4Aca79d",
     }
   },
   // Avalanche Fuji Testnet
@@ -41,8 +41,8 @@ export const CONTRACTS = {
       decimals: 18,
     },
     contracts: {
-      LeaseChain: "0x5938191577f48A6b09c802847fF2E2639763a648",
-      TestNFT: "0xb4336730c7EE24B4Ca466e880277BF95Aff82B04",
+      LeaseChain: "0xE099C33c50F085357A6Eb5A6Fe436ba3CD0afc06",
+      TestNFT: "0xb30fC27A86Aaa9Ad8D7593b137AD4990e5e8E141",
     }
   },
   // Sonic Testnet
@@ -56,8 +56,8 @@ export const CONTRACTS = {
       decimals: 18,
     },
     contracts: {
-      LeaseChain: "0xA3036d9Ec8D942acd976F0532cC689f1eC667111",
-      TestNFT: "0x6EcbE0BDD8174ef2422182Eeb89F0857044111b4",
+      LeaseChain: "0xd83Eac9830b0C28248618Ed0a6098d891F18F2f0",
+      TestNFT: "0x5938191577f48A6b09c802847fF2E2639763a648",
     }
   },
   // BNB Testnet
@@ -71,22 +71,40 @@ export const CONTRACTS = {
       decimals: 18,
     },
     contracts: {
-      LeaseChain: "0x58C53D54319bFCd77b6CD88EdE00c44466BDE035",
-      TestNFT: "0xA3036d9Ec8D942acd976F0532cC689f1eC667111",
+      LeaseChain: "0x39E98a358dE86114465Cd39DE945e07B1443C94F",
+      TestNFT: "0x82A0fE389ac95099e982bB1F04f0B028019AC40f",
     }
   }
 };
 
-// Reactive Network Configuration
+// Reactive Network Configuration (with RVM Support)
 export const REACTIVE_NETWORK = {
   chainId: 5318007,
-  name: "Reactive Network (Lasna Testnet)",
-  rpcUrl: "https://kopli-rpc.reactive.network",
-  blockExplorer: "https://kopli.reactscan.net",
+  name: "Reactive Lasna",
+  rpcUrl: "https://lasna-rpc.rnk.dev/",
+  blockExplorer: "https://lasna.reactscan.net",
+  nativeCurrency: {
+    name: "REACT",
+    symbol: "REACT",
+    decimals: 18,
+  },
   contracts: {
-    LeaseChainReactive: "0xa20bFD6cC0A0882C16c8c989cd0A0D069aE06471",
-    SystemContract: "0x0000000000000000000000000000000000fffFfF"
-  }
+    LeaseChainReactive: "0xb4336730c7EE24B4Ca466e880277BF95Aff82B04", // FRESH: All chains deployed + Callback emission
+    SystemContract: "0x0000000000000000000000000000000000fffFfF" // Official system contract address
+  },
+  faucet: {
+    address: "0x9b9BB25f1A81078C544C829c5EB7822d747Cf434",
+    chain: "Ethereum Sepolia",
+    method: "Send SepETH to receive REACT (1 SepETH = 100 REACT, max 5 SepETH)"
+  },
+  features: [
+    "RVM Transaction Scheduling",
+    "Custom Transaction Creation",
+    "Batch Transaction Processing",
+    "Multi-Chain Monitoring",
+    "Automatic NFT Reclaim",
+    "Callback Execution"
+  ]
 };
 
 // Default supported chain (Base Sepolia)
